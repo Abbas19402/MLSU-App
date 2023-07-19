@@ -1,0 +1,25 @@
+import { Provider, useSelector } from 'react-redux'
+import { persistStore } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
+import { NavigationContainer } from '@react-navigation/native'
+import { NativeBaseProvider } from 'native-base'
+
+import Store from '../Redux/Store'
+
+const Providers = ({ children }) => {
+    const persistor = persistStore(Store)
+    // const loginStatus = useSelector(state => state.auth.loginStatus)
+    return (
+        <NavigationContainer>
+            <NativeBaseProvider>
+                <Provider store={Store}>
+                    <PersistGate persistor={persistor}>
+                        {children}
+                    </PersistGate>
+                </Provider>
+            </NativeBaseProvider>
+        </NavigationContainer>
+    )
+}
+
+export default Providers
