@@ -3,9 +3,12 @@ import React , { useState } from 'react'
 
 import WeekDaysScrollbar from '../../../../../components/WeekdaysFlatlist/WeekDaysScrollbar'
 import Card from '../../../../../components/Cards'
+import Weekdays from '../../../../../constants/Weekdays'
 
 const Timetable = () => {
-  const [ currentlyActiveDay , setCurrentlyActiveDay ] = useState('')
+  const date = new Date();
+  console.log(Weekdays[date.getDay()].label);
+  const [ currentlyActiveDay , setCurrentlyActiveDay ] = useState(Weekdays[date.getDay()].id)
   return (
     <View style={{ flex: 1, backgroundColor: 'white' }}>
       <WeekDaysScrollbar 

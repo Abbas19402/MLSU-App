@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 const MonthCarouselBar = ({ month, year, monthNumber , setMonthNumber }) => {
   return (
-    <View style={{ alignSelf: 'stretch', height: 40 , justifyContent: 'center' , alignItems: 'center', flexDirection: 'row' , borderWidth: 1}}>
+    <View style={{ alignSelf: 'stretch', height: 40 , justifyContent: 'center' , alignItems: 'center', flexDirection: 'row' , borderWidth: 1 , backgroundColor: '#002154'}}>
         <TouchableOpacity 
             style={{ marginHorizontal: 30 }}
             disabled={monthNumber == 0 ? true : false}
@@ -12,7 +12,7 @@ const MonthCarouselBar = ({ month, year, monthNumber , setMonthNumber }) => {
         >
             <Icon name='chevron-back-outline' size={22} color={'darkgray'} />
         </TouchableOpacity>
-        <Text style={{ color: 'black', fontWeight: '400', fontSize: 18, letterSpacing: 0.5, minWidth: 100, textAlign: 'center' }}>
+        <Text style={{ color: 'black', fontWeight: '400', fontSize: 18, letterSpacing: 0.5, minWidth: 100, textAlign: 'center', color: 'white' }}>
             {month} {year}
         </Text>
         <TouchableOpacity 

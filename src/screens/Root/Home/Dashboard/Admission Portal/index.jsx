@@ -1,11 +1,15 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import WebView from 'react-native-webview'
 
 const AdmissionPortal = () => {
   return (
-    <View>
-      <Text>AdmissionPortal</Text>
-    </View>
+    <WebView 
+      style={{ flex: 1 }}
+      source={{
+        uri: 'https://www.mlsu.ac.in/Online-Admission20'
+      }}
+    />
   )
 }
 

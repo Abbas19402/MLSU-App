@@ -1,5 +1,9 @@
 const Weekdays = [
     {
+        id: 'sunday',
+        label: 'Sunday'
+    },
+    {
         id: 'monday',
         label: 'Monday'
     },

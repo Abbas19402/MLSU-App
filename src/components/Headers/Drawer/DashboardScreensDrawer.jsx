@@ -8,7 +8,7 @@ const DashboardScreensDrawer = ({ title , setShowHeader }) => {
   const navigation = useNavigation()
   console.log(route);
   return (
-    <View style={{height: 60 ,  alignSelf: 'stretch' , justifyContent: 'space-between' , flexDirection:'row' , alignItems:"center", paddingHorizontal: 5 , borderBottomWidth: 1, backgroundColor: 'dodgerblue' }}>
+    <View style={{height: 60 ,  alignSelf: 'stretch' , justifyContent: 'space-between' , flexDirection:'row' , alignItems:"center", paddingHorizontal: 5 , borderBottomWidth: 1, backgroundColor: '#17447B' }}>
         <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', gap: 10 }}>
             <TouchableOpacity onPress={()=> navigation.goBack()}><Icon name='arrow-back-outline' size={30} color={'white'}/></TouchableOpacity>
             <Text style={{color: 'white' , fontSize: 22 , fontWeight: '400' , letterSpacing: 2}}>{title}</Text>
