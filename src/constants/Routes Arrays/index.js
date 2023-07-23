@@ -1,7 +1,9 @@
 import RoutesForDashboards from "./DashboardRoutes"
+import RoutesForMe from "./MeRoutes"
 
 const Routes = {
-    Dashboard: RoutesForDashboards
+    Dashboard: RoutesForDashboards,
+    Me: RoutesForMe
 }
 
 export default Routes
