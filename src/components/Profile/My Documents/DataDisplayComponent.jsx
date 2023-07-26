@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { FlatList } from 'native-base'
 
-const ProfileDataDisplayComponent = ({ data }) => {
+const DocumentDataDisplayComponent = ({ data }) => {
   return (
     <FlatList
         style={{ marginTop: 180 }}
@@ -16,13 +16,13 @@ const ProfileDataDisplayComponent = ({ data }) => {
                     <FlatList 
                         style={{ marginBottom: 20 }}
                         data={Object.values(item.details)}
-                        renderItem={({ item }) => {
+                        renderItem={({ item, index }) => {
                             return <View style={{ alignSelf: 'stretch' , paddingHorizontal: 20, paddingVertical: 10, flexDirection:'row', backgroundColor: 'lightblue'}}>
                                 <View style={{ padding: 5, width: 150}}>
-                                    <Text style={{ color: 'gray',  }}>{item.keyTitle}</Text>
+                                    <Text style={{ color: 'gray',  }}>Semester {index+1}</Text>
                                 </View>
-                                <View style={{ padding: 5, width: 200}}>
-                                    <Text style={{ color: 'black',  }}>{item.value}</Text>
+                                <View style={{ padding: 5, width: 200, justifyContent: 'center', alignSelf: 'stretch', alignItems: 'center'}}>
+                                    <Text style={{ color: 'blue', textDecorationLine: 'underline' }}>Download</Text>
                                 </View>
                             </View> 
                         }}
@@ -34,4 +34,4 @@ const ProfileDataDisplayComponent = ({ data }) => {
   )
 }
 
-export default ProfileDataDisplayComponent
+export default DocumentDataDisplayComponent
