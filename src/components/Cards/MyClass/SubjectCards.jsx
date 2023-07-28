@@ -1,6 +1,5 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import Icon from 'react-native-vector-icons/Ionicons'
 
 const SubjectCards = ({ title, tutor = 'someTutor', book = 'someBook' }) => {
   return (
