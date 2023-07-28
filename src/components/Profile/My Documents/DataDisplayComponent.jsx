@@ -17,7 +17,7 @@ const DocumentDataDisplayComponent = ({ data }) => {
                         style={{ marginBottom: 20 }}
                         data={Object.values(item.documents)}
                         renderItem={({ item, index }) => {
-                            return <View style={{ alignSelf: 'stretch' , paddingHorizontal: 20, paddingVertical: 5, flexDirection:'row', backgroundColor: index%2 != 0? 'white' : '#e3e8f6'}}>
+                            return <View style={{ alignSelf: 'stretch' , paddingHorizontal: 20, paddingVertical: 5, flexDirection:'row', backgroundColor: index%2 != 0? 'white' : '#f0f3fa'}}>
                                 <View style={{ padding: 5, width: 150}}>
                                     <Text style={{ color: 'black'}}>{item.title}</Text>
                                 </View>

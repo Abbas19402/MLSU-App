@@ -1,17 +1,17 @@
 const RoutesForMe = [
     {
         iconName: 'person-outline',
-        screen: 'myProfile',
+        screen: 'My Profile',
         title: 'My Profile'
     },
     {
         iconName: 'desktop-outline',
-        screen: 'attendance',
+        screen: 'Attendance',
         title: 'Attendance'
     },
     {
         iconName: 'folder-outline',
-        screen: 'myDocuments',
+        screen: 'My Documents',
         title: 'My Documents'
     },
 ]

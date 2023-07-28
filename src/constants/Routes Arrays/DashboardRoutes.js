@@ -1,42 +1,42 @@
 const RoutesForDashboards = [
     {
         iconName: 'time-outline',
-        screen: 'timetable',
+        screen: 'Timetable',
         title: 'Timetable'
     },
     {
         iconName: 'calendar-outline',
-        screen: 'events',
+        screen: 'Events',
         title: 'Events'
     },
     {
         iconName: 'reader-outline',
-        screen: 'assignments',
+        screen: 'Assignments',
         title: 'Assignments'
     },
     {
         iconName: 'desktop-outline',
-        screen: 'attendance',
+        screen: 'Attendance',
         title: 'Attendance'
     },
     {
         iconName: 'people-circle-outline',
-        screen: 'admissionPortal',
+        screen: 'Admission Portal',
         title: 'Admission Portal'
     },
     {
         iconName: 'create-outline',
-        screen: 'examinationPortal',
+        screen: 'Examination Portal',
         title: 'Examination Portal'
     },
     {
         iconName: 'card-outline',
-        screen: 'resultPortal',
+        screen: 'Result Portal',
         title: 'Result Portal'
     },
     {
         iconName: 'laptop-outline',
-        screen: 'mlsuWebsite',
+        screen: 'MLSU Website',
         title: 'MLSU Main Website'
     }
 ]

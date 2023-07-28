@@ -3,15 +3,18 @@ import persistReducer from "redux-persist/es/persistReducer";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { combineReducers } from "redux";
 import authReducer from "./Auth";
+import HeaderReducer from "./Header/HeaderSwitch";
 
 const persistConfig = {
     key: 'root',
     version: 1,
-    storage: AsyncStorage
+    storage: AsyncStorage,
+    blacklist: ['header']
 }
 
 const reducers = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    header: HeaderReducer
 })
 
 const persistedReducer = persistReducer(persistConfig , reducers)

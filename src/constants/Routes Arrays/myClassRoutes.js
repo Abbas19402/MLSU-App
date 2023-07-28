@@ -1,17 +1,17 @@
 const RoutesForClass = [
     {
         iconName: 'time-outline',
-        screen: 'timetable',
+        screen: 'Timetable',
         title: 'Time Table'
     },
     {
         iconName: 'laptop-outline',
-        screen: 'attendance',
+        screen: 'Attendance',
         title: 'My Attendance'
     },
     {
         iconName: 'folder-outline',
-        screen: 'mySubjects',
+        screen: 'My Subjects',
         title: 'My Subjects'
     }
 ]

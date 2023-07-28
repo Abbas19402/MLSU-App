@@ -7,7 +7,6 @@ const Header = ({ title , navigation }) => {
   return (
     <View style={{height: 60 ,  alignSelf: 'stretch' , justifyContent: 'space-between' , flexDirection:'row' , alignItems:"center", paddingHorizontal: 5 , backgroundColor: '#17447B' }}>
         <Text style={{color: 'white' , fontSize: 22 , fontWeight: '400' , letterSpacing: 2}}>{title}</Text>
-        <TouchableOpacity onPress={()=> navigation.openDrawer()}><Icon name='menu-outline' size={30} color={'white'}/></TouchableOpacity>
     </View>
   )
 }
