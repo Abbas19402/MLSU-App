@@ -14,6 +14,11 @@ const RoutesForMe = [
         screen: 'My Documents',
         title: 'My Documents'
     },
+    {
+        iconName: 'log-out-outline',
+        screen: 'auth',
+        title: 'Logout'
+    },
 ]
 
 export default RoutesForMe

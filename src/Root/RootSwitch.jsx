@@ -10,7 +10,10 @@ const RootSwitch = () => {
       <Stack.Screen name="root" component={Home} options={{
         headerShown: false
       }}/>
-      <Stack.Screen name="auth" component={Auth}/>
+      <Stack.Screen name="auth" component={Auth} options={{
+        title: "Authentication",
+        headerShown: false
+      }}/>
     </Stack.Navigator>
   )
 }

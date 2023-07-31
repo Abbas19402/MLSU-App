@@ -12,7 +12,7 @@ const MyClassHome = () => {
   const dispatch = useDispatch()
     const { navigate } = useNavigation()
   return (
-    <View style={{ flex: 1, alignItems: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
         <FlatList 
         data={Routes.Class}
         renderItem={({ item }) => {

@@ -4,6 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { combineReducers } from "redux";
 import authReducer from "./Auth";
 import HeaderReducer from "./Header/HeaderSwitch";
+import collegeReducer from "./Auth/collegeSelectionSlice";
 
 const persistConfig = {
     key: 'root',
@@ -13,8 +14,8 @@ const persistConfig = {
 }
 
 const reducers = combineReducers({
-    auth: authReducer,
-    header: HeaderReducer
+    header: HeaderReducer,
+    auth: collegeReducer
 })
 
 const persistedReducer = persistReducer(persistConfig , reducers)

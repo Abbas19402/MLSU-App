@@ -10,12 +10,10 @@ const HeaderSlice = createSlice({
         SWITCH_TO_CHILDSTACK: (state) => {
             state.isInStack = true
             state.isInTabs = false
-            console.log('Stack','Child Header: ', state.isInChild,'Tabs Header: ', state.isInTabs);
         },
         SWITCH_TO_TABS: (state) => {
             state.isInStack = false
             state.isInTabs = true
-            console.log('Tabs','Child Header: ', state.isInChild,'Tabs Header: ', state.isInTabs);
         }
     }
 })

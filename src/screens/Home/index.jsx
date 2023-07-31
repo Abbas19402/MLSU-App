@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux'
 const Home = () => {
   const BottomTabs = createBottomTabNavigator()
   const headerStatus = useSelector(state => state.header.isInTabs)
-
+  
   return (
     <BottomTabs.Navigator initialRouteName='Home' screenOptions={{
       headerShown: headerStatus,
@@ -30,31 +30,31 @@ const Home = () => {
       <BottomTabs.Screen name='Home' component={Dashboard} options={{
           title: "Dashboard",
           tabBarIcon: ({ color }) => {
-            return <Icon name='home-outline' size={20} color={color}/>
+            return <Icon name='home' size={20} color={color}/>
           }
       }} />
       <BottomTabs.Screen name='Events' component={Events} options={{
         title: "Events",
         tabBarIcon: ({ color }) => {
-          return <Icon name='calendar-outline' size={20} color={color}/>
+          return <Icon name='calendar' size={20} color={color}/>
         }
       }}/>
       <BottomTabs.Screen name='My Class' component={MyClass} options={{
         title: "My Class",
         tabBarIcon: ({ color }) => {
-          return <Icon name='book-outline' size={20} color={color}/>
+          return <Icon name='book' size={20} color={color}/>
         }
       }}/>
       <BottomTabs.Screen name='Notifications' component={Notifications} options={{
         title: "Notifications",
         tabBarIcon: ({ color }) => {
-          return <Icon name='notifications-outline' size={20} color={color}/>
+          return <Icon name='notifications' size={20} color={color}/>
         }
       }}/>
       <BottomTabs.Screen name='Me' component={Me} options={{
         title: "Profile",
         tabBarIcon: ({ color }) => {
-          return <Icon name='person-outline' size={20} color={color}/>
+          return <Icon name='person' size={20} color={color}/>
         }
       }}/>
     </BottomTabs.Navigator>
