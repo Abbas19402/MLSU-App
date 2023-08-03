@@ -3,7 +3,7 @@ import React from 'react'
 
 const NotificationCard = ({ title , message, date, time }) => {
   return (
-    <View style={{ alignSelf: 'stretch' , borderWidth: 1, marginVertical: 5, borderRadius: 10, flexDirection: 'column', minHeight: 100 }}>
+    <View style={{ alignSelf: 'stretch' , borderWidth: 1, marginVertical: 5, borderRadius: 10, flexDirection: 'column', minHeight: 100, borderColor: 'lightgray' }}>
         <View style={{ height: 30, alignSelf: 'stretch', flexDirection: 'row', justifyContent: 'space-between'}}>
             <View style={{ height: 30, width: 320, borderTopStartRadius: 10, borderBottomEndRadius: 10, backgroundColor: '#f0f3fa', justifyContent: 'center', alignItems: 'flex-start', paddingHorizontal: 10 }}>
                 <Text style={{ color: 'darkblue', fontSize: 17}}>{title}</Text>

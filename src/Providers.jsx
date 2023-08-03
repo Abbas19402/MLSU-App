@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { NativeBaseProvider } from 'native-base'
 
 import Store from '../Redux/Store'
+import { SafeAreaView, Platform, View } from 'react-native'
 
 const Providers = ({ children }) => {
     const persistor = persistStore(Store)
@@ -14,7 +15,9 @@ const Providers = ({ children }) => {
             <NativeBaseProvider>
                 <Provider store={Store}>
                     <PersistGate persistor={persistor}>
-                        {children}
+                        {Platform.OS == 'ios' ? <SafeAreaView>
+                            {children}
+                        </SafeAreaView> : <View style={{ flex:1 }}>{children}</View>}
                     </PersistGate>
                 </Provider>
             </NativeBaseProvider>
