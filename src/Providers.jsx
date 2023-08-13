@@ -15,7 +15,7 @@ const Providers = ({ children }) => {
             <NativeBaseProvider>
                 <Provider store={Store}>
                     <PersistGate persistor={persistor}>
-                        {Platform.OS == 'ios' ? <SafeAreaView>
+                        {Platform.OS == 'ios' ? <SafeAreaView style={{ flex: 1 }}>
                             {children}
                         </SafeAreaView> : <View style={{ flex:1 }}>{children}</View>}
                     </PersistGate>
