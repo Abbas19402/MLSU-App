@@ -15,7 +15,8 @@ const persistConfig = {
 
 const reducers = combineReducers({
     header: HeaderReducer,
-    auth: collegeReducer
+    auth: collegeReducer,
+    login: authReducer
 })
 
 const persistedReducer = persistReducer(persistConfig , reducers)

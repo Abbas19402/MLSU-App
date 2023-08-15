@@ -10,7 +10,7 @@ const RoutesForDashboards = [
         title: 'Events'
     },
     {
-        iconName: 'reader-outline',
+        iconName: 'document-text-outline',
         screen: 'Assignments',
         title: 'Assignments'
     },
@@ -20,7 +20,7 @@ const RoutesForDashboards = [
         title: 'Attendance'
     },
     {
-        iconName: 'people-circle-outline',
+        iconName: 'person-add-outline',
         screen: 'Admission Portal',
         title: 'Admission Portal'
     },
@@ -35,7 +35,7 @@ const RoutesForDashboards = [
         title: 'Result Portal'
     },
     {
-        iconName: 'laptop-outline',
+        iconName: 'globe-outline',
         screen: 'MLSU Website',
         title: 'MLSU Main Website'
     }

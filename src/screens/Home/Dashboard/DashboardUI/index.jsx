@@ -4,8 +4,9 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { FlatList, Pressable } from 'native-base'
 import { TouchableOpacity, View, Text } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
+import AvatarSection from '../../../../components/Profile/AvatarSection'
 import Card from '../../../../components/Cards'
 import Routes from '../../../../constants/Routes Arrays'
 import { SWITCH_TO_CHILDSTACK } from '../../../../../Redux/Header/HeaderSwitch'
@@ -13,19 +14,18 @@ import { SWITCH_TO_CHILDSTACK } from '../../../../../Redux/Header/HeaderSwitch'
 const DashboardUI = () => {
   const dispatch = useDispatch()
   const { navigate } = useNavigation()
+  const Student = useSelector(state => state.login.student).student
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
       <Pressable w="100%" onPress={()=> navigate('Me')}>
-        <View style={{ height:120, borderBottomWidth: 1, alignSelf:'stretch', marginBottom: 30,  flexDirection: 'row' , justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20 }}>
-          <View style={{ flexDirection: 'row' , justifyContent: 'flex-start', alignItems: 'center', gap: 16 }}>
-            <Icon name='person-circle-outline' size={50} color={'black'}/>
-            <Text style={{ color: 'black', fontSize: 30 , letterSpacing: 1, fontWeight: '300' }}>Abbas Ali Dalal</Text>
-          </View>
-          <Icon name='chevron-forward-outline' size={20} color={'black'}/>
-        </View>
+        <AvatarSection 
+          name={Student.name}
+          batch={`${Student.generalDetails.course_enrolled} - ${Student.generalDetails.batch}`}
+        />
       </Pressable>
 
       <FlatList 
+        style={{ marginTop: 130 }}
         data={Routes.Dashboard}
         renderItem={({ item }) => {
           return <TouchableOpacity onPress={()=> {

@@ -3,17 +3,30 @@ import React , { useState } from 'react'
 import { Box, Pressable, Input, Stack } from 'native-base'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
+import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { loginStudent } from '../../../../Redux/Auth'
 
 const StudentLogin = () => {
     const { navigate } = useNavigation()
+    const dispatch = useDispatch()
     const [ show, setShow ] = useState(false);
     const [ studentCredentials, setStudentCredentials ] = useState({
-        enrollmentId: '',
+        enrollment_id: '',
         password: ''
     })
-    const Submit = () => {
-        console.log(studentCredentials)
-        navigate('root')
+    const Submit = async() => {
+        await axios.post('http://192.168.1.11:5000/api/auth/login/student',studentCredentials).then(res => {
+            console.log("Response: ",res.data.student);
+            dispatch(loginStudent(res.data.student))
+            setStudentCredentials({
+                enrollment_id: "",
+                password: ""
+            })
+            navigate('root')
+        }).catch(err => {
+            console.log("Errorefdwdawdawdawdwa: ",JSON.stringify(err));
+        })
     }
     return (
         <Box w="310" h="400" marginY="10" shadow={2}>
@@ -30,10 +43,10 @@ const StudentLogin = () => {
                     } 
                     placeholder="Enrollment ID" 
                     fontSize='18'
-                    value={studentCredentials.enrollmentId}
+                    value={studentCredentials.enrollment_id}
                     onChangeText={(eid)=> setStudentCredentials(()=> {
                         return {
-                            enrollmentId: eid,
+                            enrollment_id: eid,
                             password: studentCredentials.password
                         }
                     })}
@@ -51,7 +64,7 @@ const StudentLogin = () => {
                     value={studentCredentials.password}
                     onChangeText={(pwd)=> setStudentCredentials(()=> {
                         return {
-                            enrollmentId: studentCredentials.enrollmentId,
+                            enrollment_id: studentCredentials.enrollment_id,
                             password: pwd 
                         }
                     })}
