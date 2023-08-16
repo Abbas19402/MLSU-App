@@ -6,6 +6,7 @@ import Card from '../../../components/Cards'
 import { useDispatch } from 'react-redux'
 import { SET_COLLEGE } from '../../../../Redux/Auth/collegeSelectionSlice'
 import { useNavigation } from '@react-navigation/native'
+import Universities from '../../../constants/Universities'
 
 const SelectCollege = () => {
   const dispatch = useDispatch()
@@ -13,9 +14,7 @@ const SelectCollege = () => {
   return (
     <View style={{ flex:1, backgroundColor: 'white' }}>
       <View style={{ backgroundColor: '#17447B', flexDirection: 'row' , justifyContent: 'flex-start', alignItems: 'center', height: 60 }}>
-        <TouchableOpacity style={{ marginLeft: 10 }} onPress={()=> {
-
-        }}>
+        <TouchableOpacity style={{ marginLeft: 10 }}>
           <Icon name="chevron-back-outline" size={22} color={'white'}/>
         </TouchableOpacity>
         <TextInput placeholder='Search' style={{ width: 300, marginHorizontal: 30, fontSize: 22, textTransform: 'capitalize' , }}/>
@@ -23,8 +22,8 @@ const SelectCollege = () => {
       <View style={{ alignSelf: 'stretch', alignItems: 'center' }}>
         <FlatList
           style={{ alignSelf: 'stretch', paddingHorizontal: 10 }}
-          data={[...Array(3)]}
-          renderItem={({ item })=> {
+          data={Universities}
+          renderItem={({ item, index })=> {
             return <TouchableOpacity onPress={()=> {
               dispatch(SET_COLLEGE({
                 collegeName: '34, University College of Science',
@@ -33,10 +32,11 @@ const SelectCollege = () => {
               }))
               navigate('Login')
             }}>
-              <Card.CollegeCard 
-                CollegeName={'34, University College of Science'}
-                erpWeb={'itcs.mlsu.erp.org'}
-                center={'Vigyan Bhavan'}
+              <Card.CollegeCard
+                key={index}
+                CollegeName={item.collegeName}
+                erpWeb={item.erpWeb}
+                center={item.center}
               />
             </TouchableOpacity>
           }}

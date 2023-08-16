@@ -11,13 +11,15 @@ import { SWITCH_TO_CHILDSTACK } from '../../../../../Redux/Header/HeaderSwitch'
 const MeUI = () => {
   const dispatch = useDispatch()
   const { navigate } = useNavigation()
-  const StudentData = useSelector(state => state.login.student).student;
-  console.log(StudentData);
+  const Student = useSelector(state => state.login.student)
+  const loginCategory = useSelector(state => state.login.loginCategory);
+  const Faculty = useSelector(state => state.login.faculty);
+  console.log(Student);
   return (
     <View style={{ flex:1, backgroundColor: 'white' }}>
       <AvatarSection 
-        name={StudentData.name}
-        batch={`${StudentData.generalDetails.course_enrolled} - ${StudentData.generalDetails.batch}`}
+        name={loginCategory =='student' ? Student.name : `${Faculty.personalDetails.firstName} ${Faculty.personalDetails.lastName}`}
+        batch={loginCategory =='student' && `${Student.generalDetails.course_enrolled} - ${Student.generalDetails.batch}`}
       />
       <View style={{ position: 'relative', top: 150, alignItems: 'center' }}>
         <FlatList 

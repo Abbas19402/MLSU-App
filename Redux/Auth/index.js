@@ -5,16 +5,19 @@ const AuthSlice = createSlice({
     initialState: {
         student: null,
         faculty: null,
-        loginStatus: false
+        loginStatus: false,
+        loginCategory: ""
     },
     reducers: {
         loginStudent: (state, action) => {
             state.student = action.payload;
-            state.loginStatus = true
+            state.loginStatus = true;
+            state.loginCategory = "student"
         },
         loginFaculty: (state, action) => {
             state.faculty = action.payload;
-            state.loginStatus = true
+            state.loginStatus = true;
+            state.loginCategory = "faculty"
         },
         logout: (state) => {
             state.student = null

@@ -6,7 +6,7 @@ import Home from '../screens/Home'
 const RootSwitch = () => {
   const Stack = createNativeStackNavigator()
   return (
-    <Stack.Navigator initialRouteName='root'>
+    <Stack.Navigator initialRouteName='auth'>
       <Stack.Screen name="root" component={Home} options={{
         headerShown: false
       }}/>

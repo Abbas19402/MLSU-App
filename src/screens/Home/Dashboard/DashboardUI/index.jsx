@@ -14,13 +14,17 @@ import { SWITCH_TO_CHILDSTACK } from '../../../../../Redux/Header/HeaderSwitch'
 const DashboardUI = () => {
   const dispatch = useDispatch()
   const { navigate } = useNavigation()
-  const Student = useSelector(state => state.login.student).student
+  const Student = useSelector(state => state.login.student)
+  const loginCategory = useSelector(state => state.login.loginCategory);
+  const Faculty = useSelector(state => state.login.faculty);
+
+  console.log(Faculty);
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
       <Pressable w="100%" onPress={()=> navigate('Me')}>
         <AvatarSection 
-          name={Student.name}
-          batch={`${Student.generalDetails.course_enrolled} - ${Student.generalDetails.batch}`}
+          name={loginCategory =='student' ? Student.name : `${Faculty.personalDetails.firstName} ${Faculty.personalDetails.lastName}`}
+          batch={loginCategory =='student' && `${Student.generalDetails.course_enrolled} - ${Student.generalDetails.batch}`}
         />
       </Pressable>
 

@@ -16,9 +16,9 @@ const StudentLogin = () => {
         password: ''
     })
     const Submit = async() => {
-        await axios.post('http://192.168.1.11:5000/api/auth/login/student',studentCredentials).then(res => {
+        await axios.post('https://server-mlsu-majorproject.vercel.app/api/auth/login/student',studentCredentials).then(res => {
             console.log("Response: ",res.data.student);
-            dispatch(loginStudent(res.data.student))
+            dispatch(loginStudent(res.data.student.student))
             setStudentCredentials({
                 enrollment_id: "",
                 password: ""
@@ -70,7 +70,7 @@ const StudentLogin = () => {
                     })}
                 />
                 <Pressable w="100%" onPress={()=> Submit()}>
-                    <Box w="100%" h="50" bg="blue.200" borderRadius={5} marginY="10" justifyContent={'center'} alignItems={'center'}>
+                    <Box w="100%" h="50" bg="black" borderRadius={5} marginY="10" justifyContent={'center'} alignItems={'center'}>
                         <Text style={{ color: "white" , fontSize: 28, textTransform: 'uppercase', letterSpacing:1 }}>Submit</Text>
                     </Box>
                 </Pressable>

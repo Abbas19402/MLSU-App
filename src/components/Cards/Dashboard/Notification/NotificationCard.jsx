@@ -13,11 +13,11 @@ const NotificationCard = ({ title , message, date, time }) => {
             </View>
         </View>
         <View style={{  flexDirection: 'row', justifyContent: 'flex-end', alignContent: 'flex-end'}}>
-            <View style={{ minHeight:70, width: 300, borderBottomLeftRadius: 10, padding: 10 }}>
+            <View style={{ minHeight:70, width: 280, borderBottomLeftRadius: 10, padding: 10 }}>
                 <Text style={{ fontSize: 16, color: 'gray' }}>{message}</Text>
             </View>
-            <View style={{ minHeight:70, width: 98, borderBottomRightRadius: 10, justifyContent: 'flex-end', paddingHorizontal: 10, paddingVertical: 3}}>
-                <Text style={{fontSize: 13, color: 'black', textAlign: 'right'}}>{date}</Text>
+            <View style={{ minHeight:70, width: 120, borderBottomRightRadius: 10, justifyContent: 'flex-end', paddingHorizontal: 10, paddingVertical: 3}}>
+                <Text style={{fontSize: 14, color: 'black', textAlign: 'right', fontWeight: '500'}}>{date}</Text>
             </View>
         </View>
     </View>
